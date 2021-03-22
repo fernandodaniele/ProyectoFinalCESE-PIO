@@ -1,0 +1,42 @@
+MCUFRIEND_kbv ID=0x9341  240 x 320
+
+const int XP=8,XM=A2,YP=A3,YM=9; //240x320 ID=0x9341
+const int TS_LEFT=108,TS_RT=924,TS_TOP=66,TS_BOT=883;
+PORTRAIT CALIBRATION     240 x 320
+x = map(p.x, LEFT=108, RT=924, 0, 240)
+y = map(p.y, TOP=66, BOT=883, 0, 320)
+Touch Pin Wiring XP=8 XM=A2 YP=A3 YM=9
+LANDSCAPE CALIBRATION    320 x 240
+x = map(p.y, LEFT=66, RT=883, 0, 320)
+y = map(p.x, TOP=924, BOT=108, 0, 240)
+const int TS_LEFT=66,TS_RT=883,TS_TOP=924,TS_BOT=108;
+
+
+
+Para ESP32
+
+const int XP=12,XM=A-21,YP=A-3,YM=13; //240x320 ID=0x9341
+const int TS_LEFT=126,TS_RT=905,TS_TOP=130,TS_BOT=906;
+PORTRAIT CALIBRATION     240 x 320
+x = map(p.x, LEFT=126, RT=905, 0, 240)
+y = map(p.y, TOP=130, BOT=906, 0, 320)
+Touch Pin Wiring XP=12 XM=15 YP=33 YM=13
+LANDSCAPE CALIBRATION    320 x 240
+x = map(p.y, LEFT=130, RT=906, 0, 320)
+y = map(p.x, TOP=905, BOT=126, 0, 240)
+
+
+https://os.mbed.com/users/rlanghbv/code/mcufriend_24_tft_lcd/wiki/Hardware#mcufriend-2-4-tft-lcd-shield
+
+
+https://forum.arduino.cc/index.php?topic=582765.0
+
+https://github.com/prenticedavid/MCUFRIEND_kbv
+
+https://predictabledesigns.com/esp32-wireless-microcontroller-as-a-general-purpose-processor-using-the-arduino-ide/
+
+https://randomnerdtutorials.com/esp32-pinout-reference-gpios/
+
+https://randomnerdtutorials.com/esp32-adc-analog-read-arduino-ide/
+
+http://kio4.com/arduino/curso.htm

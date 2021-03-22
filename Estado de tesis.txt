@@ -1,0 +1,179 @@
+
+*******
+Lector SD: Funciona con ejemplo de Arduino en ESP32 en pines
+MISO 19
+MOSI 23
+CLK  18
+CS   5
+En ejemplo de ESP-IDF no pude hacerlo funcionar
+Posible solucion que vi por ahi: usar la libreria de arduino en el ESP-IDF
+--Dedicado 8 hs
+
+********
+LCD+Tactil
+A- Comunicar por puerto SPI: Empecé con el programa, pero voy a probar con puerto serie
+
+B- Por puerto serie: Probé el ejemplo de ESP32 y la interrupcion  en Arduino mega. Ahora tengo que probar con la pantalla
+
+La comunicacion por puerto serie funciona pero seria mejor dejar que el Atmega haga todo el procesamiento de pantalla y el ESP le envie los siguientes datos:
+--A que pantalla ir
+--El valor de ph que tiene que mostrar
+
+Debería recibir:
+--un valor segun el boton presionado
+
+--Dedicado 8 hs
+
+*******
+
+Se hace programa de pantalla en arduino con la maquina de estados
+Se prueba comunicación serie entre arduino y ESP con algunos comandos que representan la lectura y escritura del buffer
+
+--Dedicado 8 hs
+
+********
+
+Hacer toda la logica de los comandos
+El programa UART-TFT ya tiene la logica de comandos. Falta falta terminar de revisar alguna de las pantallas
+
+--Dedicado 8 hs
+
+*****
+
+Se realizaron las pantallas restantes
+Se probaron las funciones que leen el valor de los buffers desde el ESP
+--Dedicado 4 hs
+
+*****
+Se ajustó los valores correspondientes a los comandos RA/RB/RC y WA/WB/WC
+--Dedicado 2 hs
+
+****
+Se finalizó la primera versión del menu de navegacion de la pantalla y la comunicacion UART entre Arduino y el ESP
+hice repositorio
+--Dedicado 4 hs
+
+****
+Se acomodó estructura de proyecto
+--Dedicado 1 h
+
+****
+Se probó tarea de ADC con potenciometro y se graficaron valores en pantalla
+--Dedicado 1 h
+
+****
+Se probó ejemplo PWM
+--Dedicado 1 h
+
+****
+Se integró el ejemplo del PWM con el programa principal. Esto puede cambiar dependiendo de como se mida el volumen
+--Dedicado 1 h
+
+****
+Se agrega lectura/guardado en flash de los valores de buffers configurados y calibrados
+Se corrigen errores
+--Dedicado 3 h
+
+****
+Se probó ejemplo de SD
+--Dedicado 1 h
+
+****
+Se incorporó la parte de SD como funciones
+--Dedicado 2 h
+
+****
+Se probó openssl_server. Funciona
+Se probó station_example_main
+--Dedicado 3 h
+
+****
+Se probó conexion motor bomba
+--Dedicado 1 h
+
+****
+Se realizó esquemático (primera versión)
+-- 2 h
+
+Se modificó esquemático, agregando fuente y atmega328p 
+-- 4 h
+
+****
+se probó motor
+-- 2 h
+
+****
+1 h probar motor
+1 h esquematico
+2 h pcb
+
+***
+2 h pcb
+
+***
+2 h diseño pcb
+
+***
+3 h PCB (impresion, cortado de placa, planca, acido)
+1 h agujeros
+
+***
+3 horas soldado
+3 h pruebas
+
+***
+
+2 horas -- se probó modulo de ph con el electrodo. Valores obtenidos (sin aten): 10 ph-1120 ; 4 ph-1660 ; 7 ph-1320; 3.3 v-1935; 0 V - 0
+
+2 h correcciones a menú de pantalla
+
+***
+
+2 h prueba motor. primera calibracion con balanza
+
+***
+
+8 h -- se programa recata de regresion para conversion mV a pH. Pruebas con el adc en aten 11 dB. 
+
+***
+
+
+
+--SD (hacer el guardado en el momento que sea necesario)
+
+--Dejar pines para medicion de corriente de motores
+
+--Wifi: unir ejemplo station y openssl_server // ver si sería más facil usar bluetooth
+
+*************************************************************************************************************************************
+Lista de comandos para la comunicación entre el ESP y el atmega
+*************************************************************************************************************************************
+Comando enviado --  Se espera         			 -- Acción
+
+E                 valor del electrodo     			leer el valor actual del eletrodo * 100
+CA                 OK                  				grabar el valor actual del electrodo en el bufferA - flash
+CB                 OK                  				grabar el valor actual del electrodo en el bufferB - flash
+CC                 OK              				    grabar el valor actual del electrodo en el bufferC - flash
+VA                 valor de bufferA guardado        leer el valor actual del electrodo en el bufferA - flash
+VB                 valor de bufferB guardado        leer el valor actual del electrodo en el bufferB - flash
+VC                 valor de bufferC guardado        leer el valor actual del electrodo en el bufferC - flash
+TI                 OK                  señal de inicio de titulacion
+TF                 OK                  señal de fin de titulacion
+LI                 OK                  señal de inicio de limpieza
+LF                 OK                  señal de fin de limpieza
+RV                 valor del volumen de corte   	lee el volumen de corte
+WV + valor de VolCorte -- confirmación OK 			envia el valor del volumen de corte configurado - podría guardar en flash
+AI                 OK                  señal de agitador on
+AF                 OK                  señal de agitador off
+
+podría ser alguna señal de conexion wifi
+podría ser alguna señal de guardado en memoria SD
+
+
+Estos se sacan porque no es necesario
+RA                 valor de bufferA configurado    	lee el buffer A desde flash y lo divide por 100
+RB                 valor de bufferB configurado   	lee el buffer B desde flash       
+RC                 valor de bufferC configurado   	lee el buffer C desde flash
+WA + valor de bufferA -- confirmación OK 			envia el valor del buffer x 100 configurado por el usuario - guardar en flash
+WB + valor de bufferB -- confirmación OK -- 		envia el valor del buffer x 100 configurado por el usuario - guardar en flash
+WC + valor de bufferC -- confirmación OK -- 		envia el valor del buffer x 100 configurado por el usuario - guardar en flash

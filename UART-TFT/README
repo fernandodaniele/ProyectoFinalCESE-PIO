@@ -1,0 +1,21 @@
+Este programa controla un display MCUFRIEND y se comunica por UART con un ESP32
+
+Comando enviado --  Se espera          -- Acción
+RA                 valor de bufferA    lee el buffer A
+RB                 valor de bufferB    lee el buffer B        
+RC                 valor de bufferC    lee el buffer C
+WA + valor de bufferA -- confirmación OK -- envia el valor del buffer configurado por el usuario
+WB + valor de bufferB -- confirmación OK -- envia el valor del buffer configurado por el usuario
+WC + valor de bufferC -- confirmación OK -- envia el valor del buffer configurado por el usuario
+RE                 valor del electrodo     leer el valor actual del eletrodo
+CA                 OK                  grabar el valor actual del electrodo en el bufferA
+CB                 OK                  grabar el valor actual del electrodo en el bufferB
+CC                 OK                  grabar el valor actual del electrodo en el bufferC
+TI                 OK                  señal de inicio de titulacion
+TF                 OK                  señal de fin de titulacion
+LI                 OK                  señal de inicio de limpieza
+LF                 OK                  señal de fin de limpieza
+AI                 OK                  señal de agitador on
+AF                 OK                  señal de agitador off
+podría ser alguna señal de conexion wifi
+podría ser alguna señal de guardado en memoria SD

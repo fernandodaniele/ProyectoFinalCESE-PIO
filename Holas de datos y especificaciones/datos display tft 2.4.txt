@@ -1,0 +1,10 @@
+2.4 inch LCD TFT display
+Bright, 4 white-LED backlight, on by default but you can connect the transistor to a digital pin for backlight control
+Colorful, 18-bit 262,000 different shades
+4-wire resistive touchscreen
+240 x 320 resolution
+Spfd5408 controller with built in video RAM buffer
+8 bit digital interface, plus 4 control lines
+Uses digital pins 5-13 and analog 0-3. That means you can use digital pins 2, 3 and analog 4 and 5. Pin 12 is available if not using the micro SD
+5V compatible, use with 3.3V or 5V logic
+Size: 71 x 52 x 7mm
