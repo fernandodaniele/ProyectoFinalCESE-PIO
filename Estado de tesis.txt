@@ -137,11 +137,14 @@ se probó motor
 
 ***
 
+8 h -- se corrigen errores en el modulo SD. Se agrega guardado de datos de la titulacion en la SD
+
+***
+
+2h -- prueba del sistema: electrodo + bomba + configuracion volumen corte + sd
 
 
---SD (hacer el guardado en el momento que sea necesario)
 
---Dejar pines para medicion de corriente de motores
 
 --Wifi: unir ejemplo station y openssl_server // ver si sería más facil usar bluetooth
 

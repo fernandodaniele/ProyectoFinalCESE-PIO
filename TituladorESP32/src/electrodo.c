@@ -10,6 +10,7 @@
 #include "soc/mcpwm_periph.h"
 #include "flash.h"
 #include "uart.h"
+#include "sd.h"
 
 #define DUTY_US     50
 #define PWM_FREQ    10000
@@ -27,10 +28,10 @@ float m,b; //pendiente y ordenada de la recta de regresion
 
 int motorBomba = 0;
 int procesoTitulacion =0; //variable para inciar/ finalizar el proceso de titulacion
-int lecturaTitulacion [100];
-float titulacionPH [100];
-float derivada1 [100];
-float derivada2 [100];
+int lecturaTitulacion [1000];
+float titulacionPH [1000];
+float derivada1 [1000];
+float derivada2 [1000];
 
 int volumenActual = 0;
 extern int16_t volumenCorte;
@@ -78,10 +79,11 @@ void tareaEjemploPWM(void *arg)
     {
        if(procesoTitulacion == 1)
         {
-            for(int volumenActual =0 ; volumenActual <volumenCorte;volumenActual++)
+            escribeSD("Nueva titulación\n");
+            for(int volumenActual =1 ; volumenActual <volumenCorte+1;volumenActual++)
             {
                 mcpwm_set_duty_in_us(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, DUTY_US);
-                vTaskDelay(133 /portTICK_PERIOD_MS); //con 13333, 10 K y duty 50 inyecta 1 mL, probar si con 1333 inyecta 0,1
+                vTaskDelay(1150 /portTICK_PERIOD_MS); //con 13333, 10 K y duty 50 inyecta 1 mL, probar si con 1333 inyecta 0,1
                 mcpwm_set_duty_in_us(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, 0);
                 vTaskDelay(100 /portTICK_PERIOD_MS); //para que el valor se estabilice
                 lecturaTitulacion[volumenActual] = valorAdc;
@@ -89,23 +91,44 @@ void tareaEjemploPWM(void *arg)
             }
             //convertir valores de v a Ph
             rectaRegresion();
-            for(int vol =0; vol <volumenCorte; vol++)
+            for(int vol =1; vol <volumenCorte+1; vol++)
             {
                 titulacionPH [vol] = m * lecturaTitulacion[vol] + b;
                 ESP_LOGI("Valor PH", "%f pH", titulacionPH [vol]);
             }
             //calcular primera derivada
-            for(int vol =1; vol < (volumenCorte-1); vol++)
+            for(int vol =2; vol < (volumenCorte); vol++)
             {
                 derivada1 [vol] = (titulacionPH[vol+1]-titulacionPH[vol-1])/((vol+1)-(vol-1));
             }
             //calcular segunda derivada
-            for(int vol =2; vol < (volumenCorte-2); vol++)
+            for(int vol =3; vol < (volumenCorte-1); vol++)
             {
                 derivada2 [vol] = (derivada1[vol+1]-derivada1[vol-1])/((vol+1)-(vol-1));
             }
             //ver cual es el volumen para el cual la derivada segunda se hace 0
             //guardar todos lo valores en la SD
+            escribeSD("Volumen[mL]\tpH\t\tDerivada 1\t\tDerivada 2\n");
+            float volumen;
+            for(int vol = 1; vol < (volumenCorte+1); vol++)
+            {
+                volumen = (float) vol / 10;
+                escribeSDFloat(volumen);
+                escribeSD("\t\t");
+                escribeSDFloat(titulacionPH[vol]);
+                escribeSD("\t\t");
+                if((vol<2)||(vol>(volumenCorte-2)))
+                {
+                    escribeSD("Sin dato\t\tSin dato");
+                }
+                else
+                {
+                    escribeSDFloat(derivada1 [vol]);
+                    escribeSD("\t\t");
+                    escribeSDFloat(derivada2 [vol]);
+                }
+                escribeSD("\n");
+            }
             procesoTitulacion = 0;
 
         }

@@ -118,11 +118,35 @@ void inicializarSD()
 
 int escribeSD(char* dato)
 {
-    FILE* f = fopen("/sdcard/titular.txt", "w");
+    FILE* f = fopen("/sdcard/titular.txt", "a");
     if (f == NULL) {
         return 0;
     }
-    fprintf(f, "%s\n",dato);
+    fprintf(f, "%s",dato);
+    fclose(f);
+    ESP_LOGI(TAG, "File written");
+    return 1;
+}
+
+int escribeSDInt(int dato)
+{
+    FILE* f = fopen("/sdcard/titular.txt", "a");
+    if (f == NULL) {
+        return 0;
+    }
+    fprintf(f, "%d",dato);
+    fclose(f);
+    ESP_LOGI(TAG, "File written");
+    return 1;
+}
+
+int escribeSDFloat(float dato)
+{
+    FILE* f = fopen("/sdcard/titular.txt", "a");
+    if (f == NULL) {
+        return 0;
+    }
+    fprintf(f, "%.2f",dato);
     fclose(f);
     ESP_LOGI(TAG, "File written");
     return 1;

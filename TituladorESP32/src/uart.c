@@ -28,7 +28,7 @@ int16_t electrodoCInt = 1100;
 char electrodoStr[7];
 int16_t electrodoVal = 800;
 char volumenStr[7];
-int16_t volumenCorte = 6;
+int16_t volumenCorte = 100;
 
 void iniciarUart(void) {
     const uart_config_t uart_config = {
@@ -88,7 +88,7 @@ void rx_task(void *arg)
                 {
                     if ('V')
                     {
-                        sprintf(volumenStr,"%d",volumenCorte);
+                        sprintf(volumenStr,"%d",(volumenCorte/10));
                         sendData (volumenStr);
                     }
                 }
