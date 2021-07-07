@@ -143,6 +143,8 @@ se probó motor
 
 2h -- prueba del sistema: electrodo + bomba + configuracion volumen corte + sd
 
+***
+8 h -- se mejoran funciones tanto del menu de la pantalla tactil como del proceso de titulacion/calibracion.
 
 
 
@@ -153,27 +155,32 @@ Lista de comandos para la comunicación entre el ESP y el atmega
 *************************************************************************************************************************************
 Comando enviado --  Se espera         			 -- Acción
 
-E                 valor del electrodo     			leer el valor actual del eletrodo * 100
-CA                 OK                  				grabar el valor actual del electrodo en el bufferA - flash
-CB                 OK                  				grabar el valor actual del electrodo en el bufferB - flash
-CC                 OK              				    grabar el valor actual del electrodo en el bufferC - flash
-VA                 valor de bufferA guardado        leer el valor actual del electrodo en el bufferA - flash
-VB                 valor de bufferB guardado        leer el valor actual del electrodo en el bufferB - flash
-VC                 valor de bufferC guardado        leer el valor actual del electrodo en el bufferC - flash
-TI                 OK                  señal de inicio de titulacion
-TF                 OK                  señal de fin de titulacion
-LI                 OK                  señal de inicio de limpieza
-LF                 OK                  señal de fin de limpieza
-RV                 valor del volumen de corte   	lee el volumen de corte
-WV + valor de VolCorte -- confirmación OK 			envia el valor del volumen de corte configurado - podría guardar en flash
-AI                 OK                  señal de agitador on
-AF                 OK                  señal de agitador off
+A INICIO_CAL 		Inicio calibracion
+B FIN_CAL    		Fin calibracion -- Calcula la recta de ajuste y guarda los valores en flash
+C LECTURA_POTENCIAL 	Lectura de valor de electrodo  E                 valor del electrodo     			leer el valor actual del eletrodo * 100
+D GRABA_BUFFER4 	Guarda buffer A CA                 OK                  				grabar el valor actual del electrodo en el bufferA - flash
+E GRABA_BUFFER7		Guarda buffer B CB                 OK                  				grabar el valor actual del electrodo en el bufferB - flash
+F GRABA_BUFFER10	Guarda buffer C CC                 OK              				    grabar el valor actual del electrodo en el bufferC - flash
+G INICIO_TIT		TI                 OK                  señal de inicio de titulacion
+H LECTURA_PH   	Lee el valor de pH convertido
+I CANCELA_TIT		TF                 OK                  señal de cancelación de titulacion
+J FIN_TIT		Señal de titulacion completa -- La envia el ESP al Arduino
+K INICIO_LIMPIEZA	LI                 OK                  señal de inicio de limpieza
+L FIN_LIMPIEZA		LF                 OK                  señal de fin de limpieza
+M LEE_VOLUMEN 		RV                 valor del volumen de corte   	lee el volumen de corte
+N GUARDA_VOLUMEN	WV + valor de VolCorte -- confirmación OK 			envia el valor del volumen de corte configurado - podría guardar en flash
+O ESTADO_AGITADOR	Consulta estado agitador
+P HABILITA_AGIT		AI                 OK                  señal de agitador on
+Q DESHALIBITA_AGIT	AF                 OK                  señal de agitador off
 
 podría ser alguna señal de conexion wifi
 podría ser alguna señal de guardado en memoria SD
 
 
 Estos se sacan porque no es necesario
+VA                 valor de bufferA guardado        leer el valor actual del electrodo en el bufferA - flash
+VB                 valor de bufferB guardado        leer el valor actual del electrodo en el bufferB - flash
+VC                 valor de bufferC guardado        leer el valor actual del electrodo en el bufferC - flash
 RA                 valor de bufferA configurado    	lee el buffer A desde flash y lo divide por 100
 RB                 valor de bufferB configurado   	lee el buffer B desde flash       
 RC                 valor de bufferC configurado   	lee el buffer C desde flash

@@ -5,19 +5,24 @@
 #include "Arduino.h"
 
 void iniciarUart ();
-int leerElectrodo(float *val);
+int estadoTitulacion();
+
+int iniciarCalibracion();
+int finalizarCalibracion();
+int leerPotencial(float *val);
 int calibrarBufferA();
 int calibrarBufferB();
 int calibrarBufferC();
-int leerElectrodoA(char *val);
-int leerElectrodoB(char *val);
-int leerElectrodoC(char *val);
+//int leerPotencialA(char *val);
+//int leerPotencialB(char *val);
+//int leerPotencialC(char *val);
 int iniciarTitulacion();
+int cancelarTitulacion();
 int finalizarTitulacion();
 int iniciarLimpieza();
 int finalizarLimpieza();
-int habilitarAgitador();
-int deshabilitarAgitador();
-
 int leerVolumenCorte(int *val);
 int guardarVolumenCorte(char * val);
+int estadoAgitador(char *val); //val puede ser N o S
+int habilitarAgitador();
+int deshabilitarAgitador();

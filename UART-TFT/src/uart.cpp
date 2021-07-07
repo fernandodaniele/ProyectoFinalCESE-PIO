@@ -2,18 +2,55 @@
  * Autor: Fernando Ezequiel Daniele <fernandodaniele1993@gmai.com>
  * Fecha: 2020/12/21
  *===========================================================================*/
-//#include <avr/interrupt.h>
-//#include <avr/io.h>
 #include "Arduino.h"
 #include "uart.h"
+
+#define INICIO_CAL          'A' 		
+#define FIN_CAL    		    'B'
+#define LECTURA_POTENCIAL   'C'
+#define GRABA_BUFFER4       'D'
+#define GRABA_BUFFER7       'E'
+#define GRABA_BUFFER10      'F'
+#define INICIO_TIT          'G'
+#define LECTURA_PH          'H'
+#define CANCELA_TIT         'I'
+#define FIN_TIT             'J'
+#define INICIO_LIMPIEZA     'K'
+#define FIN_LIMPIEZA        'L'
+#define LEE_VOLUMEN         'M'
+#define GUARDA_VOLUMEN      'N'
+#define ESTADO_AGITADOR     'O'
+#define HABILITA_AGIT	    'P'
+#define DESHABILITA_AGIT    'Q'
 
 void iniciarUart ()
 {
     Serial.begin(115200);
 }
 
-int leerElectrodo(float *val){
-    Serial.write("E");    //envia comando
+int estadoTitulacion()
+{
+    unsigned long tOut = millis ();
+    while(Serial.available()==0)
+    {
+        if(millis()> (tOut + 500))
+        {
+            return 0;
+        }
+    }
+    String ack = Serial.readStringUntil('/');
+    if (ack == "J")
+    {
+        return 1;   //finalizo la titulacion
+    }
+    else
+    {
+        return 0;   //continua la titulacion
+    } 
+}
+
+int iniciarCalibracion(){
+    Serial.write(INICIO_CAL);    //envia comando
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -22,15 +59,56 @@ int leerElectrodo(float *val){
             return 0;
         }
     }
-    String temp = Serial.readString();
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
+    {
+        return 1;   //se escribió correctamente
+    }
+    else
+    {
+        return 0;   //hubo error
+    }  
+}
+
+int finalizarCalibracion(){
+    Serial.write(FIN_CAL);    //envia comando
+    unsigned long tOut = millis ();
+    while(Serial.available()==0)
+    {
+        if(millis()> (tOut + 1000))
+        {
+            return 0;
+        }
+    }
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
+    {
+        return 1;   //se escribió correctamente
+    }
+    else
+    {
+        return 0;   //hubo error
+    }  
+}
+
+int leerPotencial(float *val){
+    Serial.write(LECTURA_POTENCIAL);    //envia comando
+    unsigned long tOut = millis ();
+    while(Serial.available()==0)
+    {
+        if(millis()> (tOut + 1000))
+        {
+            return 0;
+        }
+    }
+    String temp = Serial.readStringUntil('/');
     *val = temp.toFloat();
-    *val = *val/100;
     return 1;
 }
 
 int calibrarBufferA()
 {
-    Serial.write("CA");
+    Serial.write(GRABA_BUFFER4);
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -39,8 +117,8 @@ int calibrarBufferA()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
     {
         return 1;   //se escribió correctamente
     }
@@ -52,7 +130,7 @@ int calibrarBufferA()
 
 int calibrarBufferB()
 {
-    Serial.write("CB");
+    Serial.write(GRABA_BUFFER7);
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -61,8 +139,8 @@ int calibrarBufferB()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
     {
         return 1;   //se escribió correctamente
     }
@@ -74,7 +152,7 @@ int calibrarBufferB()
 
 int calibrarBufferC()
 {
-    Serial.write("CC");
+    Serial.write(GRABA_BUFFER10);
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -83,8 +161,8 @@ int calibrarBufferC()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
     {
         return 1;   //se escribió correctamente
     }
@@ -94,57 +172,9 @@ int calibrarBufferC()
     }    
 }
 
-int leerElectrodoA(char *val){
-    Serial.write("VA");    //envia comando para leer el valor de buffer A
-    Serial.flush();
-    unsigned long tOut = millis ();
-    while(Serial.available()==0)
-    {
-        if(millis()> (tOut + 1000))
-        {
-            return 0;
-        }
-    }
-    String temp = Serial.readString();
-    temp.toCharArray(val, 5);
-    return 1;
-}
-
-int leerElectrodoB(char *val){
-    Serial.write("VB");    //envia comando
-    Serial.flush();
-    unsigned long tOut = millis ();
-    while(Serial.available()==0)
-    {
-        if(millis()> (tOut + 1000))
-        {
-            return 0;
-        }
-    }
-    String temp = Serial.readString();
-    temp.toCharArray(val, 5);
-    return 1;
-}
-
-int leerElectrodoC(char *val){
-    Serial.write("VC");    //envia comando
-    Serial.flush();
-    unsigned long tOut = millis ();
-    while(Serial.available()==0)
-    {
-        if(millis()> (tOut + 1000))
-        {
-            return 0;
-        }
-    }
-    String temp = Serial.readString();
-    temp.toCharArray(val, 5);
-    return 1;
-}
-
 int iniciarTitulacion()
 {
-    Serial.write("TI");
+    Serial.write(INICIO_TIT);
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -153,8 +183,46 @@ int iniciarTitulacion()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
+    {
+        return 1;   //se escribió correctamente
+    }
+    else
+    {
+        return 0;   //hubo error
+    }    
+}
+
+int leerPH(float *val){
+    Serial.write(LECTURA_PH);    //envia comando
+    unsigned long tOut = millis ();
+    while(Serial.available()==0)
+    {
+        if(millis()> (tOut + 1000))
+        {
+            return 0;
+        }
+    }
+    String temp = Serial.readStringUntil('/');
+    *val = temp.toFloat();
+    *val = *val/100;
+    return 1;
+}
+
+int cancelarTitulacion()
+{
+    Serial.write(CANCELA_TIT);
+    unsigned long tOut = millis ();
+    while(Serial.available()==0)
+    {
+        if(millis()> (tOut + 1000))
+        {
+            return 0;
+        }
+    }
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
     {
         return 1;   //se escribió correctamente
     }
@@ -166,7 +234,6 @@ int iniciarTitulacion()
 
 int finalizarTitulacion()
 {
-    Serial.write("TF");
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -175,20 +242,19 @@ int finalizarTitulacion()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    if (Serial.read() == FIN_TIT)
     {
-        return 1;   //se escribió correctamente
+        return 1;   //se recibió el fin de la titulación
     }
     else
     {
-        return 0;   //hubo error
+        return 0;   //se recibió otro dato
     }    
 }
 
 int iniciarLimpieza()
 {
-    Serial.write("LI");
+    Serial.write(INICIO_LIMPIEZA);
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -197,8 +263,8 @@ int iniciarLimpieza()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
     {
         return 1;   //se escribió correctamente
     }
@@ -210,7 +276,7 @@ int iniciarLimpieza()
 
 int finalizarLimpieza()
 {
-    Serial.write("LF");
+    Serial.write(FIN_LIMPIEZA);
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -219,8 +285,8 @@ int finalizarLimpieza()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
     {
         return 1;   //se escribió correctamente
     }
@@ -230,9 +296,9 @@ int finalizarLimpieza()
     }       
 }
 
-int habilitarAgitador()
-{
-    Serial.write("AI");
+int leerVolumenCorte(int *val){
+    Serial.write(LEE_VOLUMEN);    //envia comando para leer el valor de buffer A
+    Serial.flush();
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -241,8 +307,62 @@ int habilitarAgitador()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    String temp = Serial.readStringUntil('/');
+    *val = temp.toInt();
+    return 1;
+}
+
+int guardarVolumenCorte(char * val)
+{
+    Serial.write(GUARDA_VOLUMEN);
+    Serial.write(val);
+    unsigned long tOut = millis ();
+    while(Serial.available()==0)
+    {
+        if(millis()> (tOut + 1000))
+        {
+            return 0;
+        }
+    }
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
+    {
+        return 1;   //se escribió correctamente
+    }
+    else
+    {
+        return 0;   //hubo error
+    }    
+}
+
+int estadoAgitador(char *val){
+    Serial.write(ESTADO_AGITADOR);    //envia comando para leer el valor de buffer A
+    Serial.flush();
+    unsigned long tOut = millis ();
+    while(Serial.available()==0)
+    {
+        if(millis()> (tOut + 1000))
+        {
+            return 0;
+        }
+    }
+    *val = Serial.read();
+    return 1;
+}
+
+int habilitarAgitador()
+{
+    Serial.write(HABILITA_AGIT);
+    unsigned long tOut = millis ();
+    while(Serial.available()==0)
+    {
+        if(millis()> (tOut + 1000))
+        {
+            return 0;
+        }
+    }
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
     {
         return 1;   //se escribió correctamente
     }
@@ -254,7 +374,7 @@ int habilitarAgitador()
 
 int deshabilitarAgitador()
 {
-    Serial.write("AF");
+    Serial.write(DESHABILITA_AGIT);
     unsigned long tOut = millis ();
     while(Serial.available()==0)
     {
@@ -263,8 +383,8 @@ int deshabilitarAgitador()
             return 0;
         }
     }
-    String ack = Serial.readString();
-    if (ack == "OK")
+    String ack = Serial.readStringUntil('/');
+    if (ack == "K")
     {
         return 1;   //se escribió correctamente
     }
@@ -273,72 +393,3 @@ int deshabilitarAgitador()
         return 0;   //hubo error
     }    
 }
-
-int leerVolumenCorte(int *val){
-    Serial.write("RV");    //envia comando para leer el valor de buffer A
-    Serial.flush();
-    unsigned long tOut = millis ();
-    while(Serial.available()==0)
-    {
-        if(millis()> (tOut + 1000))
-        {
-            return 0;
-        }
-    }
-    String temp = Serial.readString();
-    *val = temp.toInt();
-    return 1;
-}
-
-int guardarVolumenCorte(char * val)
-{
-    Serial.write("WV");
-    Serial.write(val);
-    unsigned long tOut = millis ();
-    while(Serial.available()==0)
-    {
-        if(millis()> (tOut + 1000))
-        {
-            return 0;
-        }
-    }
-    String ack = Serial.readString();
-    if (ack == "OK")
-    {
-        return 1;   //se escribió correctamente
-    }
-    else
-    {
-        return 0;   //hubo error
-    }    
-}
-
-/* //Esto es para usar interrupciones
-void iniciarUart (){
-    UBRR1 = 8; // 8 for configuring baud rate of 115200bps, 103 for 9600
-    UCSR1C |= (1 << UCSZ11) | (1 << UCSZ10); 
-    // Use 8-bit character sizes
-    UCSR1B |= (1 << RXEN1) | (1 << TXEN1) | (1 << RXCIE1);  
-    // Turn on the transmission, reception, and Receive interrupt     
-    sei();// enable global interrupt
-}
-
-ISR(USART1_RX_vect)
-{ 
-  char datoActual = UDR1; // Lee el rado recibido desde el puerto serie
-  
-  if(datoActual == '\n'){
-    recepcionTerminada = true;
-    for(int i =0; i<indice; i++){
-          datosRecibidos[i] = datos [i];
-    }
-    cantidad = indice;
-    indice=0;
-  }
-  else
-  {
-    datos[indice] = datoActual;
-    indice++;
-  }
-}
-*/

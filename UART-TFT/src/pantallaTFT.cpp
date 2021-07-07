@@ -30,9 +30,9 @@
 #define TITULAR_BTN     "TITULAR"
 #define CONFIGURAR_BTN  "AJUSTES"
 #define WIFI_BTN        "WIFI"
-#define B1_BTN          "BUFFER 1"
-#define B2_BTN          "BUFFER 2"
-#define B3_BTN          "BUFFER 3"
+#define B1_BTN          "BUFFER 4"
+#define B2_BTN          "BUFFER 7"
+#define B3_BTN          "BUFFER 10"
 #define REGRESAR_BTN    "REGRESAR"
 #define T_INC_DEC        70
 #define RETARDO_PANTALLA 1000
@@ -47,7 +47,7 @@ Adafruit_GFX_Button incBtn, decBtn;
 char bufferA[6], bufferB[6], bufferC[6]; //variables de calibración en bits formato decimal (0-0V 2047-3.3V)
 float bufferAPH = 4.00, bufferBPH = 7.00, bufferCPH = 10.00; //variables de calibración en ph
 int pixel_x, pixel_y;   
-int volumenCorte = 50;
+int volumenCorte = 10;
 
 uint16_t gX, gY; //variables para la curva de titulacion
 float ph;
@@ -125,34 +125,12 @@ int consultaTactil(){
 //Muestra la pantalla con el valor actual de cada buffer y da la opción de elegir 
 //cada uno de ellos por separado para realizar la calibración
 void pantallaElegirBuffer(){
+    //Limpia la pantalla y muestra el valor actual de los buffers
     tft.fillScreen(BLACK);
     tft.setTextColor(WHITE);
     tft.setCursor(10,20);
-    tft.print("Leyendo valor actual de buffers... ");
-    //Solicita al ESP el valor de cada uno de los buffers
-    if(leerElectrodoA(bufferA)==0){
-      tft.print("Error al leer buffer A... ");
-    }
-    else if (leerElectrodoB(bufferB)==0){
-      tft.print("Error al leer buffer B... ");
-    }
-    else if (leerElectrodoC(bufferC)==0){
-      tft.print("Error al leer buffer C... ");
-    }
-    else{
-      //Limpia la pantalla y muestra el valor actual de los buffers
-      tft.fillScreen(BLACK);
-      tft.setTextColor(WHITE);
-      tft.setCursor(10,20);
-      tft.print("bufferA = ");
-      tft.print(bufferA);
-      tft.setCursor(10,40);
-      tft.print("bufferB = ");
-      tft.print(bufferB);
-      tft.setCursor(10,60);
-      tft.print("bufferC = ");
-      tft.print(bufferC);
-    }
+    tft.print("1. Coloque el electrodo\n   en el buffer\n");
+    tft.print("2. Seleccione la opcion\n   correspondiente al\n   buffer utilizado");
 
     //Dibuja los botones correspondientes a esta pantalla
     unoBtn.initButton(&tft,  80, 150, 140, 40, WHITE, CYAN, BLACK, B1_BTN, TXT_BTN_SIZE);
@@ -183,7 +161,7 @@ void pantallaCalibrar (){
 int tactilCalibrar(){
   float tempMV = ph;
   //Acá tengo que leer el valor del electrodo desde el ESP
-  if(leerElectrodo(&ph)==0){
+  if(leerPotencial(&ph)==0){
       imprimirError();
       return 4;
   }
@@ -192,12 +170,12 @@ int tactilCalibrar(){
   tft.setCursor(100,110);
   tft.setTextColor(BLACK);
   tft.print(tempMV);
-  tft.print(" mV");
+  tft.print(" pH");
   //Acá tengo que mostrar en pantalla ese valor leido
   tft.setCursor(100,110);
   tft.setTextColor(WHITE);
   tft.print(ph);
-  tft.print(" mV");
+  tft.print(" pH");
   }
 
   bool  ab = Touch_getXY(&pixel_x, &pixel_y);
@@ -241,13 +219,6 @@ void pantallaMedir(){
   tft.print("tiempo");
   tft.setTextSize(2);
 
-  /*tft.setCursor(20,200);
-  tft.setTextColor(WHITE);
-  if(leerElectrodo(&ph)==0){
-      tft.print("Error al leer el electrodo... ");
-  }
-  tft.print(ph);
-  tft.print(" pH");*/
   T= millis();
   gX = 20;
 }
@@ -255,11 +226,11 @@ void pantallaMedir(){
 //Actualiza el grafico y consulta si se presionó el boton de finalizar
 int tactilMedir(){
   
-  if(millis()>T+0){
+  if(millis()>T+1000){
 
     float tmpPH = ph;
     //Acá debería consultar al ESP el valor del pH
-    if(leerElectrodo(&ph)==0){
+    if(leerPotencial(&ph)==0){
       imprimirError();
       return 4;
     }
@@ -507,7 +478,6 @@ void pantallaCalibrarC()
   }
 }
 
-
 void pantallaAgitador()
 {
     tft.fillScreen(BLACK);
@@ -521,7 +491,6 @@ void pantallaAgitador()
     dosBtn.drawButton(false);
     cuatroBtn.drawButton(false);
 }
-
 
 int tactilAgitador(){
     bool  presionado = Touch_getXY(&pixel_x,&pixel_y);
