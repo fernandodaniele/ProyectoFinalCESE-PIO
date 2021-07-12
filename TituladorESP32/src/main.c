@@ -1,10 +1,7 @@
-/* UART asynchronous example, that uses separate RX and TX tasks
-
-   This example code is in the Public Domain (or CC0 licensed, at your option.)
-
-   Unless required by applicable law or agreed to in writing, this
-   software is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
-   CONDITIONS OF ANY KIND, either express or implied.
+/* 
+Sistema embebido para titulador potenciometrico autómatico
+Desarrollado por Ing. Fernando Ezequiel Daniele como proyecto final de la Especialización en Sistemas Embebidos de la FIUBA
+Este sistema se enmarca dentro del proyecto de investigación y desarrollo de un Titulador automatico llevado a cabo por el grupo GISAI de UTN San Francisco
 */
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -21,11 +18,9 @@
 void app_main(void)
 {
     inicializarSD();
-    iniciarUart();
     iniciarFlash();
-    xTaskCreate(rx_task, "uart_rx_task", 1024*2, NULL, configMAX_PRIORITIES-1, NULL);
-    xTaskCreate(electrodo_task, "electrodo_task", 1024*2, NULL, configMAX_PRIORITIES, NULL);
-    xTaskCreate(tareaEjemploPWM, "ejemploPWM", 1024*2, NULL, 5, NULL);
+    iniciarUart();
+    xTaskCreatePinnedToCore (tareaUart, "tareaUart", 1024*2, NULL, configMAX_PRIORITIES, NULL, 1);
+    xTaskCreatePinnedToCore (tareaElectrodo, "tareaElectrodo", 1024*2, NULL, configMAX_PRIORITIES, NULL, 0);
+    xTaskCreatePinnedToCore (tareaBomba, "ejemploPWM", 1024*2, NULL, configMAX_PRIORITIES-1, NULL, 0);
 }
-
-

@@ -428,3 +428,1035 @@ cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-
 
 
 
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting C compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_8944b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8944b.dir\Debug\\" /Fd"cmTC_8944b.dir\Debug\vc142.pdb" /Gd /TC /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCCompilerABI.c"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_8944b.vcxproj]
+
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_c4a09.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c4a09.dir\Debug\\" /Fd"cmTC_c4a09.dir\Debug\vc142.pdb" /Gd /TC /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCCompiler.c
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_c4a09.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_5364f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5364f.dir\Debug\\" /Fd"cmTC_5364f.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_5364f.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_ce2c5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ce2c5.dir\Debug\\" /Fd"cmTC_ce2c5.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_ce2c5.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_e86cf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e86cf.dir\Debug\\" /Fd"cmTC_e86cf.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_e86cf.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_e53ad.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e53ad.dir\Debug\\" /Fd"cmTC_e53ad.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_e53ad.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_0c075.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0c075.dir\Debug\\" /Fd"cmTC_0c075.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_0c075.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_12052.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_12052.dir\Debug\\" /Fd"cmTC_12052.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_12052.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_89f3c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_89f3c.dir\Debug\\" /Fd"cmTC_89f3c.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_89f3c.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_826d5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_826d5.dir\Debug\\" /Fd"cmTC_826d5.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_826d5.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_b176e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b176e.dir\Debug\\" /Fd"cmTC_b176e.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_b176e.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_cf43b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cf43b.dir\Debug\\" /Fd"cmTC_cf43b.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_cf43b.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_0261f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0261f.dir\Debug\\" /Fd"cmTC_0261f.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_0261f.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_d3aed.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d3aed.dir\Debug\\" /Fd"cmTC_d3aed.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_d3aed.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_760df.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_760df.dir\Debug\\" /Fd"cmTC_760df.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_760df.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_1bc2d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1bc2d.dir\Debug\\" /Fd"cmTC_1bc2d.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_1bc2d.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_28b84.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_28b84.dir\Debug\\" /Fd"cmTC_28b84.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_28b84.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_54a0b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_54a0b.dir\Debug\\" /Fd"cmTC_54a0b.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_54a0b.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_ad268.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ad268.dir\Debug\\" /Fd"cmTC_ad268.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_ad268.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_d2037.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d2037.dir\Debug\\" /Fd"cmTC_d2037.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_d2037.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_c3d14.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c3d14.dir\Debug\\" /Fd"cmTC_c3d14.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_c3d14.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_49591.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_49591.dir\Debug\\" /Fd"cmTC_49591.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_49591.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_2a0e7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2a0e7.dir\Debug\\" /Fd"cmTC_2a0e7.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_2a0e7.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_e5c26.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e5c26.dir\Debug\\" /Fd"cmTC_e5c26.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_e5c26.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_0e8d5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0e8d5.dir\Debug\\" /Fd"cmTC_0e8d5.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_0e8d5.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_473c0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_473c0.dir\Debug\\" /Fd"cmTC_473c0.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_473c0.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_97775.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_97775.dir\Debug\\" /Fd"cmTC_97775.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_97775.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_152f4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_152f4.dir\Debug\\" /Fd"cmTC_152f4.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_152f4.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_03083.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_03083.dir\Debug\\" /Fd"cmTC_03083.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_03083.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_76166.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_76166.dir\Debug\\" /Fd"cmTC_76166.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_76166.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_3e617.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3e617.dir\Debug\\" /Fd"cmTC_3e617.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_3e617.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_0cd4c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0cd4c.dir\Debug\\" /Fd"cmTC_0cd4c.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_0cd4c.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_d75ed.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d75ed.dir\Debug\\" /Fd"cmTC_d75ed.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_d75ed.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_ebe18.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ebe18.dir\Debug\\" /Fd"cmTC_ebe18.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_ebe18.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_0a6cd.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0a6cd.dir\Debug\\" /Fd"cmTC_0a6cd.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_0a6cd.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_ac993.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ac993.dir\Debug\\" /Fd"cmTC_ac993.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_ac993.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_05878.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_05878.dir\Debug\\" /Fd"cmTC_05878.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_05878.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_247fa.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_247fa.dir\Debug\\" /Fd"cmTC_247fa.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_247fa.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_2275a.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2275a.dir\Debug\\" /Fd"cmTC_2275a.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_2275a.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_1ae52.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1ae52.dir\Debug\\" /Fd"cmTC_1ae52.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_1ae52.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_cf49f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_cf49f.dir\Debug\\" /Fd"cmTC_cf49f.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_cf49f.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_76a26.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_76a26.dir\Debug\\" /Fd"cmTC_76a26.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_76a26.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_ffd53.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ffd53.dir\Debug\\" /Fd"cmTC_ffd53.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_ffd53.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_21822.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_21822.dir\Debug\\" /Fd"cmTC_21822.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_21822.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_18b48.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_18b48.dir\Debug\\" /Fd"cmTC_18b48.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_18b48.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_849e8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_849e8.dir\Debug\\" /Fd"cmTC_849e8.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_849e8.vcxproj]
+
+
+
+Checking whether the ASM compiler is GNU using "--version" did not match "(GNU assembler)|(GCC)|(Free Software Foundation)":
+Checking whether the ASM compiler is Clang using "--version" did not match "(clang version)":
+Checking whether the ASM compiler is AppleClang using "--version" did not match "(Apple LLVM version)":
+Checking whether the ASM compiler is ARMClang using "--version" did not match "armclang":
+Checking whether the ASM compiler is HP using "-V" did not match "HP C":
+Checking whether the ASM compiler is Intel using "--version" did not match "(ICC)":
+Checking whether the ASM compiler is SunPro using "-V" did not match "Sun C":
+Checking whether the ASM compiler is XL using "-qversion" did not match "XL C":
+Checking whether the ASM compiler is MSVC using "-?" did not match "Microsoft":
+Checking whether the ASM compiler is TI using "-h" did not match "Texas Instruments":
+Checking whether the ASM compiler is IAR using "" did not match "IAR Assembler":
+Checking whether the ASM compiler is ARMCC using "" did not match "(ARM Compiler)|(ARM Assembler)":
+Checking whether the ASM compiler is NASM using "-v" did not match "(NASM version)":
+Checking whether the ASM compiler is YASM using "--version" did not match "(yasm)":
+Checking whether the ASM compiler is ADSP using "-version" did not match "Analog Devices":
+Checking whether the ASM compiler is QCC using "-V" did not match "gcc_nto":
+Detecting CXX compiler ABI info failed to compile with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_83a89.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_83a89.dir\Debug\\" /Fd"cmTC_83a89.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\share\cmake-3.18\Modules\CMakeCXXCompilerABI.cpp"
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_83a89.vcxproj]
+
+
+
+
+Determining if the CXX compiler works failed with the following output:
+Change Dir: D:/repositorios/ProyectoFinalCESE/TituladorESP32/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/BuildTools/MSBuild/Current/Bin/MSBuild.exe cmTC_bceb6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine versión 16.8.3+39993bd9d para .NET Framework
+Copyright (C) Microsoft Corporation. Todos los derechos reservados.
+
+  Compilador de optimización de C/C++ de Microsoft (R) versión 19.28.29337 para x64
+  (C) Microsoft Corporation. Todos los derechos reservados.
+  cl /c /W1 /WX- /diagnostics:column /O2 /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bceb6.dir\Debug\\" /Fd"cmTC_bceb6.dir\Debug\vc142.pdb" /Gd /TP /errorReport:queue  -mlongcalls -Wno-frame-address D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\testCXXCompiler.cxx
+cl : línea de comandos error D8021: argumento numérico no válido '/Wno-frame-address' [D:\repositorios\ProyectoFinalCESE\TituladorESP32\build\CMakeFiles\CMakeTmp\cmTC_bceb6.vcxproj]
+
+
+

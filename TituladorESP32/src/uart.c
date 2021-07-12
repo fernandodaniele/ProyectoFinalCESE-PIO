@@ -1,17 +1,21 @@
+//============================ Inclusiones ===================================
 #include "uart.h"
 #include "flash.h"
+#include "electrodo.h"
 
-static const int RX_BUF_SIZE = 1024;
-
+//============================ Definiciones ===================================
 #define TXD_PIN (GPIO_NUM_4)
 #define RXD_PIN (GPIO_NUM_5)
 
-extern int valorAdc;
+//============================== Variables ===================================
+static const int RX_BUF_SIZE = 1024;
+extern float valorAdc;
 extern portMUX_TYPE myMutex;
 extern int motorBomba;
 extern int procesoTitulacion;
-
-int sendData(const char* data);
+extern int procesoCalibracion;
+extern int16_t valorBuffer[3];
+extern float m,b;
 
 char bufferA[7];
 int16_t bufferAInt = 400;
@@ -28,9 +32,11 @@ int16_t electrodoCInt = 1100;
 char electrodoStr[7];
 int16_t electrodoVal = 800;
 char volumenStr[7];
-int16_t volumenCorte = 100;
+int16_t volumenCorte = 10;
 
-void iniciarUart(void) {
+//============================ Funciones ===================================
+void iniciarUart(void)
+{
     const uart_config_t uart_config = {
         .baud_rate = 115200,
         .data_bits = UART_DATA_8_BITS,
@@ -39,187 +45,136 @@ void iniciarUart(void) {
         .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
         .source_clk = UART_SCLK_APB,
     };
-    // We won't use a buffer for sending data.
-    uart_driver_install(UART_NUM_1, RX_BUF_SIZE * 2, 0, 0, NULL, 0);
     uart_param_config(UART_NUM_1, &uart_config);
     uart_set_pin(UART_NUM_1, TXD_PIN, RXD_PIN, UART_PIN_NO_CHANGE, UART_PIN_NO_CHANGE);
+    uart_driver_install(UART_NUM_1, RX_BUF_SIZE * 2, 0, 0, NULL, 0);
 }
 
-int sendData(const char* data)
+int enviarPorUart(const char* data)
 {
     const int len = strlen(data);
     const int txBytes = uart_write_bytes(UART_NUM_1, data, len);
+    uart_write_bytes(UART_NUM_1, "/", 1);
+    //ESP_LOGI("Envío por UART", "%s", data);
     return txBytes;
 }
 
-void rx_task(void *arg)
+void tareaUart(void *arg)
 {
-    static const char *RX_TASK_TAG = "RX_TASK";
-    esp_log_level_set(RX_TASK_TAG, ESP_LOG_INFO);
     uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE+1);
     
-    while (1) {
+    while (true) 
+    {
         int rxBytes = uart_read_bytes(UART_NUM_1, data, RX_BUF_SIZE, 500 / portTICK_RATE_MS);
         if (rxBytes > 0) {
             data[rxBytes] = 0;
-            ESP_LOGI(RX_TASK_TAG, "Read %d bytes: '%s'", rxBytes, data);
-            ESP_LOG_BUFFER_HEXDUMP(RX_TASK_TAG, data, rxBytes, ESP_LOG_INFO);
 			switch (data[0])
 			{
-            case 'E':
-                sprintf(electrodoStr,"%d",valorAdc);
-                sendData (electrodoStr); //acá seria el valor del electrodo
-                break;
-			case 'W':
-                {
-                    if('V')
-                    {
-                        for(int i = 2; i<rxBytes; i++)
-                        {
-                            volumenStr [i-2] = data [i];
-                        }
-                        volumenCorte = atoi (volumenStr);
-                        sendData("OK");
-                        ESP_LOGI(RX_TASK_TAG, "Volumen corte: '%d'", volumenCorte);
-                    }
+                case INICIO_CAL:{
+                    enviarPorUart("K");
+                    procesoCalibracion = 1;
+                    break;
                 }
-				break;
-			case 'R':
-                {
-                    if ('V')
-                    {
-                        sprintf(volumenStr,"%d",(volumenCorte/10));
-                        sendData (volumenStr);
-                    }
+                case FIN_CAL:{
+                    enviarPorUart("K");
+                    procesoCalibracion = 0;
+                    rectaRegresion();
+                    break;
                 }
-				break;
-            case 'V':
-                {
-                    switch (data[1])
-                    {
-                    case 'A':
-                        if(leerFlash("CALIBREA", &electrodoAInt))
-                        {
-                            ESP_LOGI(RX_TASK_TAG, "%d Guardado en Flash", electrodoAInt);
-                        }
-                        sprintf(electrodoA,"%d",electrodoAInt);
-                        sendData (electrodoA);
-                        //ESP_LOGI(RX_TASK_TAG, "Send data: '%s'", electrodoA);
-                        break;
-                    case 'B':
-                        if(leerFlash("CALIBREB", &electrodoBInt))
-                        {
-                            ESP_LOGI(RX_TASK_TAG, "%d Guardado en Flash", electrodoBInt);
-                        }
-                        sprintf(electrodoB,"%d",electrodoBInt);
-                        sendData (electrodoB);
-                        //ESP_LOGI(RX_TASK_TAG, "Send data: '%s'", electrodoB);
-                        break;
-                    case 'C':
-                        if(leerFlash("CALIBREC", &electrodoCInt))
-                        {
-                            ESP_LOGI(RX_TASK_TAG, "%d Guardado en Flash", electrodoCInt);
-                        }
-                        sprintf(electrodoC,"%d",electrodoCInt);
-                        sendData (electrodoC);
-                        //ESP_LOGI(RX_TASK_TAG, "Send data: '%s'", electrodoC);
-                        break;
-                    default:
-                        break;
-                    }
+                case LECTURA_POTENCIAL:{
+                    portENTER_CRITICAL(&myMutex);
+                    float valorPH = m * valorAdc + b;
+                    portEXIT_CRITICAL(&myMutex);
+                    sprintf(electrodoStr,"%.2f",valorPH);
+                    enviarPorUart (electrodoStr); //acá seria el valor del electrodo
+                    break;
                 }
-				break;
-            case 'C':
-                {
-                    switch (data[1])
+                case GRABA_BUFFER4:{
+                   /* if(guardarFlash("CALIBREA", valorAdc)) //esto debería ir en seecion critica
                     {
-                    case 'A':
-                        if(guardarFlash("CALIBREA", valorAdc)) //esto debería ir en seecion critica
-                        {
-                            ESP_LOGI(RX_TASK_TAG, "%d Guardado en Flash", valorAdc);
-                        }
-                        sendData("OK");
-                        break;
-                    case 'B':
-                        if(guardarFlash("CALIBREB", valorAdc))
-                        {
-                            ESP_LOGI(RX_TASK_TAG, "%d Guardado en Flash", valorAdc);
-                        }
-                        sendData("OK");
-                        break;
-                    case 'C':
-                        if(guardarFlash("CALIBREC", valorAdc))
-                        {
-                            ESP_LOGI(RX_TASK_TAG, "%d Guardado en Flash", valorAdc);
-                        }
-                        sendData("OK");
-                        break;
-                    default:
-                        break;
-                    }
+                        ESP_LOGI(RX_TASK_TAG, "%d Guardado en Flash", valorAdc);
+                    }*/
+                    portENTER_CRITICAL(&myMutex);
+                    valorBuffer[0] = valorAdc;
+                    portEXIT_CRITICAL(&myMutex);
+                    enviarPorUart("K");
+                    break;
                 }
-                break;
-			
-            case 'T':
-                {
-                    switch (data[1])
+                case GRABA_BUFFER7:{
+                    portENTER_CRITICAL(&myMutex);
+                    valorBuffer[1] = valorAdc;
+                    portEXIT_CRITICAL(&myMutex);
+                    enviarPorUart("K");
+                    break;
+                }
+                case GRABA_BUFFER10:{
+                    portENTER_CRITICAL(&myMutex);
+                    valorBuffer[2]= valorAdc;
+                    portEXIT_CRITICAL(&myMutex);
+                    enviarPorUart("K");
+                    break;
+                }	
+                case INICIO_TIT:{
+                    //iniciar titualacion
+                    enviarPorUart("K");
+                    procesoTitulacion = 1;
+                    break;
+                }
+                case LECTURA_PH:{
+                    break;
+                }
+                case CANCELA_TIT:{
+                    //finalizar titulacion
+                    enviarPorUart("K");
+                    procesoTitulacion = 0;
+                    break;
+                }
+                case INICIO_LIMPIEZA:{
+                    //iniciar limpieza
+                    enviarPorUart("K");
+                    motorBomba = 1;
+                    break;
+                }
+                case FIN_LIMPIEZA:{
+                    //finalizar limpieza
+                    enviarPorUart("K");
+                    motorBomba = 0;
+                    break;
+                }
+                case GUARDA_VOLUMEN:{
+                    for(int i = 1; i<rxBytes; i++)
                     {
-                    case 'I':
-                        //iniciar titualacion
-                        sendData("OK");
-                        procesoTitulacion = 1;
-                        break;
-                    case 'F':
-                        //finalizar titulacion
-                        sendData("OK");
-                        procesoTitulacion = 0;
-                        break;
-                    default:
-                        break;
+                        volumenStr [i-1] = data [i];
                     }
+                    volumenCorte = 10 * (atoi (volumenStr)) ;
+                    enviarPorUart("K");
+                    printf("Volumen corte recibido: '%d'", volumenCorte);
+                    break;
                 }
-                break;
-            case 'L':
-                {
-                    switch (data[1])
-                    {
-                    case 'I':
-                        //iniciar limpieza
-                        sendData("OK");
-                        motorBomba = 1;
-                        break;
-                    case 'F':
-                        //finalizar limpieza
-                        sendData("OK");
-                        motorBomba = 0;
-                        break;
-                    default:
-                        break;
-                    }
+			    case LEE_VOLUMEN:{
+                    sprintf(volumenStr,"%d",(volumenCorte/10));
+                    enviarPorUart (volumenStr);
+                    printf("Volumen corte enviado: '%s'", volumenStr);
+                    break;
                 }
-                break;
-            case 'A':
-                {
-                    switch (data[1])
-                    {
-                    case 'I':
-                        //habilitar agitador
-                        sendData("OK");
-                        break;
-                    case 'F':
-                        //deshabilitar agitador
-                        sendData("OK");
-                        break;
-                    default:
-                        break;
-                    }
+                case ESTADO_AGITADOR:{
+                    break;
                 }
-                break;
-			default:
-				break;
+                case HABILITA_AGIT:{
+                    //habilitar agitador
+                    enviarPorUart("K");
+                    break;
+                }
+                case DESHABILITA_AGIT:{
+                    //deshabilitar agitador
+                    enviarPorUart("K");
+                    break;
+                }
+                default:{
+                    break;
+                }
 			}
-        }
-    
+        }    
     }
     free(data);
 }
