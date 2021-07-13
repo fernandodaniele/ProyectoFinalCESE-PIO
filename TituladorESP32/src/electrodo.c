@@ -25,7 +25,7 @@
 float valorAdc;
 int16_t valorBuffer[3] = {3050,2455,2120};
 
-float m=-0.0063,b=22.981; //pendiente y ordenada de la recta de regresion
+float m=0.003333,b=0.228118; //pendiente y ordenada de la recta de regresion
 
 int motorBomba = 0;
 int procesoTitulacion =0; //variable para inciar/ finalizar el proceso de titulacion
@@ -69,7 +69,7 @@ void tareaBomba(void *arg)
 {
     //Configuración
     int min;
-    
+
     gpio_pad_select_gpio(PIN_DIR);
     gpio_set_direction(PIN_DIR, GPIO_MODE_OUTPUT);
     gpio_set_level(PIN_DIR, 0);
@@ -113,8 +113,9 @@ void tareaBomba(void *arg)
                 }
                 i++;
             }
+            enviarPorUart(FIN_TIT);
             //convertir valores de v a Ph
-            for(int vol =1; vol <volumenCorte+1; vol++)
+            for(int vol =1; vol <i+1; vol++)
             {
                 titulacionPH [vol] = m * lecturaTitulacion[vol] + b;
                 ESP_LOGI("Valor PH", "%f pH", titulacionPH [vol]);
@@ -125,9 +126,11 @@ void tareaBomba(void *arg)
                 derivada1 [vol] = (titulacionPH[vol+1]-titulacionPH[vol-1])/(volumenInyectado[vol+1]-volumenInyectado[vol-1]);
             }
             //calcular segunda derivada
-            for(int vol =3; vol < (volumenCorte-1); vol++)
+            for(int vol =3; vol < (i-1); vol++)
             {
                 derivada2 [vol] = fabs((derivada1[vol+1]-derivada1[vol-1])/(volumenInyectado[vol+1]-volumenInyectado[vol-1]));
+                ESP_LOGI("Volumen inyectado", "%d pH", volumenInyectado [vol]);
+                ESP_LOGI("Derivada segunda", "%f pH", derivada2 [vol]);
                 if (vol == 3 || min < derivada2 [vol]){
                     min = derivada2 [vol];                  //verifico cual es el valor para el cual el volumen se hace 0
                     volumenFinal = volumenInyectado[vol];
@@ -137,10 +140,10 @@ void tareaBomba(void *arg)
 
             ESP_LOGI("Volumen final", "%d mL", volumenFinal);
             //Guardar el resultado en la SD / mostrar por WiFi
-            
-            enviarPorUart(FIN_TIT); //aviso que finalizó la titulación para cambiar de pantalla
-            //Habría que agregar el resultado.
             procesoTitulacion = 0;
+             //aviso que finalizó la titulación para cambiar de pantalla
+            //Habría que agregar el resultado.
+            
 
             //guardar todos lo valores en la SD -- Esto no haría falta
             /*escribeSD("Volumen[mL]\tpH\t\tDerivada 1\t\tDerivada 2\n");

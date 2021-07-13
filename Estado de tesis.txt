@@ -144,9 +144,11 @@ se probó motor
 2h -- prueba del sistema: electrodo + bomba + configuracion volumen corte + sd
 
 ***
-8 h -- se mejoran funciones tanto del menu de la pantalla tactil como del proceso de titulacion/calibracion.
+10 h -- se mejoran funciones tanto del menu de la pantalla tactil como del proceso de titulacion/calibracion.
 
+***
 
+2 h -- calculo del volumen final
 
 --Wifi: unir ejemplo station y openssl_server // ver si sería más facil usar bluetooth
 
