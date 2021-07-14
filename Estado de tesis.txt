@@ -150,6 +150,11 @@ se probó motor
 
 2 h -- calculo del volumen final
 
+***
+2h  -- ajustes en sd y flash
+
+**
+
 --Wifi: unir ejemplo station y openssl_server // ver si sería más facil usar bluetooth
 
 *************************************************************************************************************************************

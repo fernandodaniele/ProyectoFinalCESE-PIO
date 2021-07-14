@@ -1,7 +1,7 @@
 //============================ Inclusiones ===================================
 #include "uart.h"
-#include "flash.h"
 #include "electrodo.h"
+#include "flash.h"
 
 //============================ Definiciones ===================================
 #define TXD_PIN (GPIO_NUM_4)
@@ -15,7 +15,6 @@ extern int motorBomba;
 extern int procesoTitulacion;
 extern int procesoCalibracion;
 extern int16_t valorBuffer[3];
-extern float m,b;
 
 char bufferA[7];
 int16_t bufferAInt = 400;
@@ -62,6 +61,8 @@ int enviarPorUart(const char* data)
 void tareaUart(void *arg)
 {
     uint8_t* data = (uint8_t*) malloc(RX_BUF_SIZE+1);
+    int64_t mProv, bProv;
+    float m = 1, b = 1;            
     
     while (true) 
     {
@@ -82,9 +83,11 @@ void tareaUart(void *arg)
                     break;
                 }
                 case LECTURA_POTENCIAL:{
-                    portENTER_CRITICAL(&myMutex);
+                    leerFlash ("M", &mProv);
+                    leerFlash ("B", &bProv);
+                    m = mProv/1000000.0;
+                    b = bProv/1000000.0;
                     float valorPH = m * valorAdc + b;
-                    portEXIT_CRITICAL(&myMutex);
                     sprintf(electrodoStr,"%.2f",valorPH);
                     enviarPorUart (electrodoStr); //acá seria el valor del electrodo
                     break;

@@ -20,7 +20,7 @@ void app_main(void)
     inicializarSD();
     iniciarFlash();
     iniciarUart();
-    xTaskCreatePinnedToCore (tareaUart, "tareaUart", 1024*2, NULL, configMAX_PRIORITIES, NULL, 1);
-    xTaskCreatePinnedToCore (tareaElectrodo, "tareaElectrodo", 1024*2, NULL, configMAX_PRIORITIES, NULL, 0);
-    xTaskCreatePinnedToCore (tareaBomba, "ejemploPWM", 1024*2, NULL, configMAX_PRIORITIES-1, NULL, 0);
+    xTaskCreatePinnedToCore (tareaUart, "tareaUart", 1024*3, NULL, configMAX_PRIORITIES, NULL, 1);
+    xTaskCreatePinnedToCore (tareaElectrodo, "tareaElectrodo", 1024*3, NULL, configMAX_PRIORITIES, NULL, 0);
+    xTaskCreatePinnedToCore (tareaBomba, "ejemploPWM", 1024*3, NULL, configMAX_PRIORITIES-1, NULL, 0);
 }

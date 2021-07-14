@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 void iniciarFlash (void);
-int leerFlash (const char *valorNombre, int16_t *valorLeido);
-int guardarFlash(const char *valorNombre, int16_t valorGuardar);
+int leerFlash (const char *valorNombre, int64_t *valorLeido);
+int guardarFlash(const char *valorNombre, int64_t valorGuardar);
 
 #endif
