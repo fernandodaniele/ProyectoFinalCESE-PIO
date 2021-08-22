@@ -17,17 +17,18 @@
 #define PWM_FREQ    10000
 #define PIN_DIR     27
 #define PIN_PASO    12
-#define UMBRAL_PH   50 //diferencia en el valor del ADC por debajo del cual se acelera el proceso de medicion
+#define UMBRAL_PH   40 //0.2 pH - diferencia en el valor del ADC por arriba del cual se acelera el proceso de medicion
 #define N_MUESTRAS  100 //Muestras que toma el ADC para promediar
 #define T_MUESTRAS  10  //tiempo entre muestras
-#define T_INYEC_CORTO 1150 //1150 para 0.1 mL
+#define T_INYEC_CORTO 1150 //1150 para 0,1 mL
 #define T_INYEC_LARGO 11500 //11500 para 1 mL
+#define T_ESPERA    5000 //Tiempo que espera para que estabilice el pH
 
 //============================== Variables ===================================
 float valorAdc;
-int16_t valorBuffer[3] = {3050,2455,2120};
+int16_t valorBuffer[3] = {3466,2844,2271};
 int motorBomba = 0;
-int procesoTitulacion =0; //variable para inciar/ finalizar el proceso de titulacion
+int procesoTitulacion =0; //variable para iniciar/ finalizar el proceso de titulacion
 int procesoCalibracion = 0;
 int lecturaTitulacion [1000];
 int volumenInyectado [1000];
@@ -66,8 +67,9 @@ void tareaElectrodo (void *arg)
 void tareaBomba(void *arg)
 {
     //Configuración
-    int min;
-    float m=0.003333,b=0.228118;
+    int min=0;
+    int max=0;
+    float m=-0.005,b=21.3;
 
     gpio_pad_select_gpio(PIN_DIR);
     gpio_set_direction(PIN_DIR, GPIO_MODE_OUTPUT);
@@ -89,27 +91,45 @@ void tareaBomba(void *arg)
         {
             escribeSD("Nueva titulación\n");
             uint16_t tiempoInyectado = T_INYEC_CORTO;
-            uint16_t cont = 0;
+            uint16_t cont = 0, jota = 0;
+            int dif=0;
 
             for(int volumenActual =1 ; volumenActual <volumenCorte+1;volumenActual++)
             {
                 mcpwm_set_duty_in_us(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, DUTY_US);
                 vTaskDelay(tiempoInyectado /portTICK_PERIOD_MS); //con 13333, 10 K y duty 50 inyecta 1 mL, probar si con 1333 inyecta 0,1
                 mcpwm_set_duty_in_us(MCPWM_UNIT_0, MCPWM_TIMER_0, MCPWM_OPR_A, 0);
-                vTaskDelay(1000 /portTICK_PERIOD_MS); //para que el valor se estabilice
+                vTaskDelay(T_ESPERA /portTICK_PERIOD_MS); //para que el valor se estabilice
                 portENTER_CRITICAL(&myMutex); 
                 lecturaTitulacion[cont] = valorAdc;
                 volumenInyectado[cont] = volumenActual;
                 portEXIT_CRITICAL(&myMutex);
-                int dif = (abs(lecturaTitulacion[cont]-lecturaTitulacion[cont-1]));
+                if(cont >0)
+                {
+                    dif = (abs(lecturaTitulacion[cont]-lecturaTitulacion[cont-1]));
+                }                
                 if(dif < UMBRAL_PH)
                 {
-                    tiempoInyectado = T_INYEC_LARGO;//acá podría cambiar la velocidad de la bomba
-                    volumenActual += 9; //el volumen aumenta de 10 en diez
+                    if(tiempoInyectado == T_INYEC_CORTO)
+                    {
+                        jota++;
+                        if( jota == 10)
+                        {
+                            tiempoInyectado = T_INYEC_LARGO;//acá podría cambiar la velocidad de la bomba
+                        }
+                    }
+                    else{
+                        volumenActual += 9; //el volumen aumenta de 10 en diez
+                    }
                 }
                 else
                 {
+                    if(tiempoInyectado == T_INYEC_CORTO)
+                    {
+                        volumenActual += 9;
+                    }
                     tiempoInyectado = T_INYEC_CORTO;
+                    jota = 0;
                 }
                 ESP_LOGI("Volumen actual", "%d", volumenActual);
                 if(procesoTitulacion == 0){
@@ -126,26 +146,30 @@ void tareaBomba(void *arg)
             m = mProv/1000000.0;
             b = bProv/1000000.0;
             //convertir valores de v a Ph
-            for(int vol =1; vol <cont+1; vol++)
+            for(int vol =0; vol <cont; vol++)
             {
                 titulacionPH [vol] = m * lecturaTitulacion[vol] + b;
                 ESP_LOGI("Valor PH", "%f pH", titulacionPH [vol]);
             }
             //calcular primera derivada
-            for(int vol =2; vol < cont; vol++)
+            for(int vol =1; vol < cont-1; vol++)
             {
                 derivada1 [vol] = (titulacionPH[vol+1]-titulacionPH[vol-1])/(volumenInyectado[vol+1]-volumenInyectado[vol-1]);
+                if (vol == 3 || max < derivada1 [vol]){
+                    max = derivada1 [vol];                  //verifico cual es el valor para el cual el volumen se hace 0
+                    volumenFinal = volumenInyectado[vol]/10.0;
+                }
             }
             //calcular segunda derivada
-            for(int vol =3; vol < (cont-1); vol++)
+            for(int vol =2; vol < (cont-2); vol++)
             {
                 derivada2 [vol] = fabs((derivada1[vol+1]-derivada1[vol-1])/(volumenInyectado[vol+1]-volumenInyectado[vol-1]));
                 ESP_LOGI("Volumen inyectado", "%d pH", volumenInyectado [vol]);
                 ESP_LOGI("Derivada segunda", "%f pH", derivada2 [vol]);
-                if (vol == 3 || min > derivada2 [vol]){
+               /* if (vol == 3 || min > derivada2 [vol]){
                     min = derivada2 [vol];                  //verifico cual es el valor para el cual el volumen se hace 0
                     volumenFinal = volumenInyectado[vol]/10.0;
-                }
+                }*/
             }
             //ver que pasa si tengo dos volumen final
 
@@ -201,7 +225,7 @@ void rectaRegresion()
     int n=3,i;
     float sumax,sumay,sumaxy,sumax2;
     float y[3];
-    float m=0.003333,b=0.228118; //pendiente y ordenada de la recta de regresion
+    float m=-0.005,b=21.3; //pendiente y ordenada de la recta de regresion
     ESP_LOGI("m", "entre a la recta");
     y[0] = 4; //ph
     y[1] = 7;

@@ -16,22 +16,22 @@ extern int procesoTitulacion;
 extern int procesoCalibracion;
 extern int16_t valorBuffer[3];
 
-char bufferA[7];
-int16_t bufferAInt = 400;
-char bufferB[7];
-int16_t bufferBInt = 700;
-char bufferC[7];
-int16_t bufferCInt = 1000;
-char electrodoA[7];
-int16_t electrodoAInt = 500;
-char electrodoB[7];
+//char bufferA[7];
+//int16_t bufferAInt = 400;
+//char bufferB[7];
+//int16_t bufferBInt = 700;
+//char bufferC[7];
+//int16_t bufferCInt = 1000;
+//char electrodoA[7];
+//int16_t electrodoAInt = 500;
+/*char electrodoB[7];
 int16_t electrodoBInt = 750;
 char electrodoC[7];
-int16_t electrodoCInt = 1100;
+int16_t electrodoCInt = 1100;*/
 char electrodoStr[7];
-int16_t electrodoVal = 800;
+//int16_t electrodoVal = 800;
 char volumenStr[7];
-int16_t volumenCorte = 10;
+int16_t volumenCorte = 400;
 
 //============================ Funciones ===================================
 void iniciarUart(void)
