@@ -157,15 +157,15 @@ void tareaBomba(void *arg)
             for(int vol =1; vol < cont-1; vol++)
             {
                 derivada1 [vol] = (titulacionPH[vol+1]-titulacionPH[vol-1])/(volumenInyectado[vol+1]-volumenInyectado[vol-1]);
-                if (vol == 3 || max < derivada1 [vol]){
-                    max = derivada1 [vol];                  //verifico cual es el valor para el cual el volumen se hace 0
+                if (vol == 3 || max < fabs(derivada1 [vol])){
+                    max = fabs(derivada1 [vol]);                  //verifico cual es el valor para el cual el volumen se hace 0
                     volumenFinal = volumenInyectado[vol]/10.0;
                 }
             }
             //calcular segunda derivada
             for(int vol =2; vol < (cont-2); vol++)
             {
-                derivada2 [vol] = fabs((derivada1[vol+1]-derivada1[vol-1])/(volumenInyectado[vol+1]-volumenInyectado[vol-1]));
+                derivada2 [vol] = (derivada1[vol+1]-derivada1[vol-1])/(volumenInyectado[vol+1]-volumenInyectado[vol-1]);
                 ESP_LOGI("Volumen inyectado", "%d pH", volumenInyectado [vol]);
                 ESP_LOGI("Derivada segunda", "%f pH", derivada2 [vol]);
                /* if (vol == 3 || min > derivada2 [vol]){
