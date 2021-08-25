@@ -288,7 +288,7 @@ static esp_err_t mostrarPagina(httpd_req_t *req)
     char* data1="<!DOCTYPE html><html>";
     char* data2="<head><title>Titulador</title></head>";
     char* data3="<body><h1>Titulador potenciometrico automatico</h1><p>Desarrollado por UTN San Francisco.</p>";
-    char* data4 = "<p>Volumen gastado = %.1f</p>";
+    char* data4 = "<p>Volumen en punto de equivalencia = %.1f [mL]</p>";
     char* data8= "<p>Datos de la titulacion</p>";
     char* data9= "<table class=""default""><tr><th>Volumen[mL]</th><th>pH</th></tr>";
     char* data10= "<tr><td>%.1f</td><td>%.1f</td></tr>";

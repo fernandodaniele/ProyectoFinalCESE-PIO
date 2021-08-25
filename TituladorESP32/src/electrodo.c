@@ -175,10 +175,10 @@ void tareaBomba(void *arg)
             }
             //ver que pasa si tengo dos volumen final
 
-            ESP_LOGI("Volumen final", "%f mL", volumenFinal);
+            ESP_LOGI("Volumen en punto de equivalencia:", "%f mL", volumenFinal);
             
             //Guarda el resultado en la SD (faltaría en WiFi)
-            escribeSD("Volumen final = ");
+            escribeSD("Volumen en punto de equivalencia = ");
             escribeSDFloat(volumenFinal);
             escribeSD("\n");
 
