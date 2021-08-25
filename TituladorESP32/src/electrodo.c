@@ -35,7 +35,8 @@ int volumenInyectado [1000];
 float titulacionPH [1000];
 float derivada1 [1000];
 float derivada2 [1000];
-float volumenFinal;
+float volumenFinal = 0;
+uint16_t cont = 0;
 
 int volumenActual = 0;
 extern int16_t volumenCorte;
@@ -67,7 +68,7 @@ void tareaElectrodo (void *arg)
 void tareaBomba(void *arg)
 {
     //Configuración
-    int min=0;
+    //int min=0;
     int max=0;
     float m=-0.005,b=21.3;
 
@@ -91,7 +92,8 @@ void tareaBomba(void *arg)
         {
             escribeSD("Nueva titulación\n");
             uint16_t tiempoInyectado = T_INYEC_CORTO;
-            uint16_t cont = 0, jota = 0;
+            cont = 0;
+            uint16_t jota = 0;
             int dif=0;
 
             for(int volumenActual =1 ; volumenActual <volumenCorte+1;volumenActual++)
@@ -183,7 +185,7 @@ void tareaBomba(void *arg)
             //guarda todos lo valores en la SD -- Esto no haría falta
             escribeSD("Volumen[mL]\tpH\t\tDerivada 1\t\tDerivada 2\n");
             
-            for(int vol = 1; vol < (cont+1); vol++)
+            for(int vol = 1; vol < (cont); vol++)
             {
                 escribeSDFloat(volumenInyectado[vol]/10.0);
                 escribeSD("\t\t");
@@ -196,7 +198,7 @@ void tareaBomba(void *arg)
                 else
                 {
                     escribeSDFloat(derivada1 [vol]);
-                    escribeSD("\t\t");
+                    escribeSD("\t\t\t");
                     escribeSDFloat(derivada2 [vol]);
                 }
                 escribeSD("\n");  

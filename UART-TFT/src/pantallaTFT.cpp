@@ -36,6 +36,7 @@
 #define REGRESAR_BTN    "REGRESAR"
 #define T_INC_DEC        70
 #define RETARDO_PANTALLA 1000
+#define RETARDO_PIXEL    5000
 /*=============================================================================
  * Variables y objetos locales
  *===========================================================================*/
@@ -226,7 +227,7 @@ void pantallaMedir(){
 //Actualiza el grafico y consulta si se presionó el boton de finalizar
 int tactilMedir(){
   
-  if(millis()>T+1000){
+  if(millis()>T+RETARDO_PIXEL){
 
     float tmpPH = ph;
     //Acá debería consultar al ESP el valor del pH

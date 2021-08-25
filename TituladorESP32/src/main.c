@@ -14,12 +14,15 @@ Este sistema se enmarca dentro del proyecto de investigación y desarrollo de un
 #include "electrodo.h"
 #include "flash.h"
 #include "sd.h"
+#include "../include/wifi.h"
 
 void app_main(void)
 {
     inicializarSD();
     iniciarFlash();
     iniciarUart();
+    iniciarWifi();
+    inicarServidor();
     xTaskCreatePinnedToCore (tareaUart, "tareaUart", 1024*3, NULL, configMAX_PRIORITIES, NULL, 1);
     xTaskCreatePinnedToCore (tareaElectrodo, "tareaElectrodo", 1024*3, NULL, configMAX_PRIORITIES, NULL, 0);
     xTaskCreatePinnedToCore (tareaBomba, "ejemploPWM", 1024*3, NULL, configMAX_PRIORITIES-1, NULL, 0);
