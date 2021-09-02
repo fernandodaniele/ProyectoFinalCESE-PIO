@@ -5,7 +5,7 @@
 #include "Arduino.h"
 
 void iniciarUart ();
-int estadoTitulacion();
+int estadoTitulacion(float *val);
 
 int iniciarCalibracion();
 int finalizarCalibracion();

@@ -16,8 +16,8 @@
 #include "electrodo.h"
 
 //==================== Definiciones ==========================
-#define WIFI_SSID      "Fibertel WiFi154 2.4GHz"
-#define WIFI_PASS      "Roberkira1"
+#define WIFI_SSID      "Red Wi-Fi"
+#define WIFI_PASS      "titulador"
 #define MAXIMUM_RETRY  2
 // El event group permite múltiples bits para cada evento, pero solo nos interesan dos:
 #define WIFI_CONNECTED_BIT BIT0 //está conectado al AP con una IP

@@ -14,7 +14,7 @@
 #define INICIO_TIT          'G'
 #define LECTURA_PH          'H'
 #define CANCELA_TIT         'I'
-#define FIN_TIT             'J'
+#define FIN_TIT             "J"
 #define INICIO_LIMPIEZA     'K'
 #define FIN_LIMPIEZA        'L'
 #define LEE_VOLUMEN         'M'
@@ -28,7 +28,7 @@ void iniciarUart ()
     Serial.begin(115200);
 }
 
-int estadoTitulacion()
+int estadoTitulacion(float *val)
 {
     unsigned long tOut = millis ();
     while(Serial.available()==0)
@@ -39,8 +39,18 @@ int estadoTitulacion()
         }
     }
     String ack = Serial.readStringUntil('/');
-    if (ack == "J")
+    if (ack == FIN_TIT)
     {
+        unsigned long tOut = millis ();
+        while(Serial.available()==0)
+        {
+            if(millis()> (tOut + 1000))
+            {
+                return 0;
+            }
+        }
+        String temp = Serial.readStringUntil('/');
+        *val = temp.toFloat();
         return 1;   //finalizo la titulacion
     }
     else
@@ -229,26 +239,6 @@ int cancelarTitulacion()
     else
     {
         return 0;   //hubo error
-    }    
-}
-
-int finalizarTitulacion()
-{
-    unsigned long tOut = millis ();
-    while(Serial.available()==0)
-    {
-        if(millis()> (tOut + 1000))
-        {
-            return 0;
-        }
-    }
-    if (Serial.read() == FIN_TIT)
-    {
-        return 1;   //se recibió el fin de la titulación
-    }
-    else
-    {
-        return 0;   //se recibió otro dato
     }    
 }
 

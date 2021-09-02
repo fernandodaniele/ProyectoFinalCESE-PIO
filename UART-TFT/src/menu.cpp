@@ -10,6 +10,7 @@
 // Variable para el estado actual
 pantalla_t pantalla;
 int opcion =0;
+float resultado;
 
 // Función para controlar errores de la MEF (Error handler)
 void errorMEF( void )
@@ -134,7 +135,11 @@ void actualizarMEF( )
     	   if(opcion==4){
             if(cancelarTitulacion()){
               // Serial.println("Se finalizo titulacion");
-            }
+              delay(3000);
+               if(estadoTitulacion(&resultado))
+               {
+                  imprimirResultado(resultado);
+               }
             else
             {
               // Serial.println("Error en finalizar titulacion");
@@ -144,8 +149,10 @@ void actualizarMEF( )
             pantallaInicial();
     	   }
          //Se lee el puerto serie para ver si finalizó la titulación
-         if(estadoTitulacion())
+         
+         else if(estadoTitulacion(&resultado))
          {
+            imprimirResultado(resultado);
             pantalla = MENU_INICIAL;
             pantallaInicial();
          }
@@ -254,4 +261,5 @@ void actualizarMEF( )
     	 errorMEF();
     	 break;
    }
+}
 }

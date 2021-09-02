@@ -126,7 +126,7 @@ void tareaBomba(void *arg)
                 }
                 else
                 {
-                    if(tiempoInyectado == T_INYEC_CORTO)
+                    if(tiempoInyectado == T_INYEC_LARGO)
                     {
                         volumenActual += 9;
                     }
@@ -141,7 +141,7 @@ void tareaBomba(void *arg)
                 cont++;
             }
             //aviso que finalizó la titulación para cambiar de pantalla
-            enviarPorUart(FIN_TIT);
+            
             int64_t mProv, bProv;
             leerFlash ("M", &mProv);
             leerFlash ("B", &bProv);
@@ -174,6 +174,10 @@ void tareaBomba(void *arg)
                 }*/
             }
             //ver que pasa si tengo dos volumen final
+            char volString[7];
+            enviarPorUart(FIN_TIT);
+            sprintf(volString,"%.2f",volumenFinal);
+            enviarPorUart(volString);
 
             ESP_LOGI("Volumen en punto de equivalencia:", "%f mL", volumenFinal);
             

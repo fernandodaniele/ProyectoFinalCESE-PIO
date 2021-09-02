@@ -31,7 +31,7 @@ int16_t electrodoCInt = 1100;*/
 char electrodoStr[7];
 //int16_t electrodoVal = 800;
 char volumenStr[7];
-int16_t volumenCorte = 400;
+int16_t volumenCorte = 350;
 
 //============================ Funciones ===================================
 void iniciarUart(void)

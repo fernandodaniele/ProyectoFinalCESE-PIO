@@ -139,3 +139,5 @@ int tactilAgitador();
 void habilitoAgitador();
 
 void deshabilitoAgitador();
+
+void imprimirResultado(float);

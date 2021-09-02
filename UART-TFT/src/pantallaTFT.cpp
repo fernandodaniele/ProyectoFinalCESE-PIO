@@ -437,6 +437,17 @@ void imprimirGuardando()
   delay(RETARDO_PANTALLA);
 }
 
+void imprimirResultado(float resultado)
+{
+  tft.setCursor(15,100);
+  tft.setTextColor(WHITE);
+  tft.fillScreen(BLACK);
+  tft.print("Volumen = ");
+  tft.print(resultado);
+  tft.print(" [mL] ");
+  delay(RETARDO_PANTALLA*5);
+}
+
 void pantallaCalibrarA()
 {
   imprimirGuardando();
