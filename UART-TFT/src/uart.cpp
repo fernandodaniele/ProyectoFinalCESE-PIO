@@ -42,13 +42,13 @@ int estadoTitulacion(float *val)
     if (ack == FIN_TIT)
     {
         unsigned long tOut = millis ();
-        while(Serial.available()==0)
+        /*while(Serial.available()==0)
         {
             if(millis()> (tOut + 1000))
             {
                 return 0;
             }
-        }
+        }*/
         String temp = Serial.readStringUntil('/');
         *val = temp.toFloat();
         return 1;   //finalizo la titulacion

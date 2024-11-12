@@ -4,5 +4,8 @@
     "recommendations": [
         "cschlosser.doxdocgen",
         "platformio.platformio-ide"
+    ],
+    "unwantedRecommendations": [
+        "ms-vscode.cpptools-extension-pack"
     ]
 }

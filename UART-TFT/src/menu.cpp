@@ -135,11 +135,14 @@ void actualizarMEF( )
     	   if(opcion==4){
             if(cancelarTitulacion()){
               // Serial.println("Se finalizo titulacion");
-              delay(3000);
-               if(estadoTitulacion(&resultado))
+              //delay(3000);
+              if(estadoTitulacion(&resultado))
                {
-                  imprimirResultado(resultado);
+                 imprimirResultado(resultado);
+                 pantalla = MENU_INICIAL;
+                 pantallaInicial();
                }
+            }
             else
             {
               // Serial.println("Error en finalizar titulacion");
@@ -261,5 +264,4 @@ void actualizarMEF( )
     	 errorMEF();
     	 break;
    }
-}
 }
